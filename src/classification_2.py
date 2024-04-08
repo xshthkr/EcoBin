@@ -65,3 +65,4 @@ if __name__ == "__main__":
     model = ImageClassifier(train_folder)
     model.load_training_data()
     result = model.classify_image(path_to_image)
+    print("Predicted Label:", result)

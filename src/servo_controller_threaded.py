@@ -26,32 +26,34 @@ class ServoController:
         self.p.ChangeDutyCycle(duty_cycle)
         sleep(1)
 
+
+# PAIR 1
 def servo1_spin_clockwise():
     servo1 = ServoController(11)
     servo1.move_servo(0)
-    servo1.move_servo(180)
+    servo1.move_servo(90)
     del servo1
+def servo2_spin_counterclockwise():
+    servo2 = ServoController(37)
+    servo2.move_servo(90)
+    servo2.move_servo(0)
+    del servo2
 
+# PAIR 2
 def servo1_spin_counterclockwise():
     servo1 = ServoController(11)
-    servo1.move_servo(180)
+    servo1.move_servo(90)
     servo1.move_servo(0)
     del servo1
-
 def servo2_spin_clockwise():
     servo2 = ServoController(37)
     servo2.move_servo(0)
-    servo2.move_servo(180)
+    servo2.move_servo(90)
     del servo2
 
-def servo2_spin_counterclockwise():
-    servo2 = ServoController(37)
-    servo2.move_servo(180)
-    servo2.move_servo(0)
-    del servo2
 
-t1 = threading.Thread(target=servo1_spin)
-t2 = threading.Thread(target=servo2_spin)
+t1 = threading.Thread(target=servo1_spin_clockwise)
+t2 = threading.Thread(target=servo2_spin_counterclockwise)
 
 # Example usage
 if __name__ == "__main__":

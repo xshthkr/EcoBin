@@ -1,8 +1,15 @@
+# KNN Waste Classification Model
+
+# This is a module to classify waste images using the K-Nearest Neighbors (KNN) algorithm.
+# This script is used to classifies waste images using the KNN algorithm.
+# It loads the training data from the specified folder, classifies the test image, and displays the result using matplotlib.
+
 import os
 import cv2
 import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 import matplotlib.pyplot as plt
+
 
 class ImageClassifier:
 

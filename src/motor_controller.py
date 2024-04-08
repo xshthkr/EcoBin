@@ -1,8 +1,16 @@
-import time
+# MOTOR CONTROLLER
 
+# This is a module to control DC motors using the Raspberry Pi.
+# This script is used to test the DC motor.
+# It spins the motor clockwise for 3 seconds, counterclockwise for 3 seconds, and stops for 1 second.
+
+import time
 import RPi.GPIO as GPIO
 
+
 class Controller:
+
+
     def __init__(self):
         # Set GPIO mode
         GPIO.setmode(GPIO.BOARD)
@@ -17,11 +25,13 @@ class Controller:
 
         print("[ACTUATOR] >> Motor ready.")
 
+
     # Function to spin the motor clockwise
     def clockwise(self):
         print("[CONTROLLER] >> Rotating clockwise...")
         GPIO.output(self.pin1, GPIO.HIGH)
         GPIO.output(self.pin2, GPIO.LOW)
+
 
     # Function to spin the motor counterclockwise
     def counterclockwise(self):
@@ -29,11 +39,13 @@ class Controller:
         GPIO.output(self.pin1, GPIO.LOW)
         GPIO.output(self.pin2, GPIO.HIGH)
 
+
     # Function to stop the motor
     def stop(self):
         print("[CONTROLLER] >> Stopping.")
         GPIO.output(self.pin1, GPIO.LOW)
         GPIO.output(self.pin2, GPIO.LOW)
+
 
 if __name__ == "__main__":
     try:

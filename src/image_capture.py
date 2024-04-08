@@ -1,11 +1,21 @@
+# IMAGE CAPTURE
+
+# This is a module to capture images using the webcam of the Raspberry Pi.
+# This script is used to capture an image from the webcam and display it.
+# It saves the image in the specified path and displays it using matplotlib.
+
 import cv2
 import matplotlib.pyplot as plt
 
+
 class ImageCapture:
+
+
     def __init__(self):
         # Open the first available webcam
         self.cap = cv2.VideoCapture(0)
         print("[WEBCAM] >> Ready")
+
 
     def capture_image(self):
         # Check if the webcam is opened correctly
@@ -28,9 +38,11 @@ class ImageCapture:
             
             return path
 
+
     def release(self):
         # Release the webcam
         self.cap.release()
+
 
 if __name__ == "__main__":
     # Create an instance of ImageCapture

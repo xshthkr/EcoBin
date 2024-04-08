@@ -12,16 +12,17 @@ import RPi.GPIO as GPIO
 class ServoController:
 
 
-    def __init__(self, pin):
+    def __init__(self, pin, servo_number):
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(pin, GPIO.OUT)
         self.p = GPIO.PWM(pin, 50)
         self.p.start(0)
-        print("[ACTUATOR] >> Servo ready.")
+        self.number = servo_number
+        print(f"[ACTUATOR {self.number}] >> Servo ready.")
 
 
     def __del__(self):
-        print("[ACTUATOR] >> Stopping.")
+        print(f"[ACTUATOR {self.number}] >> Stopping.")
         self.p.stop()
         GPIO.cleanup()
 
@@ -32,7 +33,7 @@ class ServoController:
 
 
     def move_servo(self, angle):
-        print(f"[ACTUATOR] >> Moving to {angle} degrees")
+        print(f"[ACTUATOR {self.number}] >> Moving to {angle} degrees")
         duty_cycle = self.angle_to_duty_cycle(angle)
         self.p.ChangeDutyCycle(duty_cycle)
         sleep(1)
@@ -40,8 +41,10 @@ class ServoController:
 
 if __name__ == "__main__":
 
-    servo1 = ServoController(11)
-    servo2 = ServoController(37)
+    # ServoController(pin, servo_number)
+    servo1 = ServoController(11, 1)
+    servo2 = ServoController(37, 2)
+
     try:
         while True:
             servo1.move_servo(0)

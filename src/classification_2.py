@@ -51,7 +51,7 @@ class ImageClassifier:
             predicted_label = self.knn_classifier.predict(test_image_flattened)[0]
 
             plt.imshow(test_image)
-            plt.title(f"Predicted Label: {prediction[0]}")
+            plt.title(f"Predicted Label: {predicted_label}")
             plt.axis('off')
             plt.show()
 

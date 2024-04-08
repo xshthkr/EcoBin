@@ -22,8 +22,9 @@ model = ImageClassifier(train_folder)
 model.load_training_data()
 result = model.classify_image(path_to_image)
 
-servo1 = ServoController(11)
-servo2 = ServoController(37)
+# ServoController(pin, servo_number)
+servo1 = ServoController(11, 1)
+servo2 = ServoController(37, 2)
 
 
 # PAIR 1
@@ -47,7 +48,7 @@ def servo2_spin_clockwise():
     servo2.move_servo(90)
 
 
-if result == "O":
+if result == "O":   # ORGANIC
 
     print(f"[ECOBIN] >> Predicted Label: {result}")
 
@@ -61,7 +62,7 @@ if result == "O":
     t1.join()
     t2.join()
 
-elif result == "R":
+elif result == "R": # RECYCLABLE
 
     print(f"[ECOBIN] >> Predicted Label: {result}")
     
@@ -76,7 +77,7 @@ elif result == "R":
     t2.join()
 
 else:
-    
+
     print("[ECOBIN] >> Couldnt classify image.")
 
 del servo1

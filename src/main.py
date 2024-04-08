@@ -20,14 +20,14 @@ servo1 = ServoController(11)
 
 def servo1_spin_clockwise():
     servo1 = ServoController(11)
-    servo1.move_servo(0)
+    servo1.move_servo(180)
     servo1.move_servo(180)
     del servo1
 
 def servo1_spin_counterclockwise():
     servo1 = ServoController(11)
-    servo1.move_servo(180)
-    servo1.move_servo(180)
+    servo1.move_servo(0)
+    servo1.move_servo(0)
     del servo1
 
 def servo2_spin_clockwise():
@@ -39,7 +39,7 @@ def servo2_spin_clockwise():
 def servo2_spin_counterclockwise():
     servo2 = ServoController(37)
     servo2.move_servo(180)
-    servo2.move_servo(0)
+    servo2.move_servo(180)
     del servo2
 
 

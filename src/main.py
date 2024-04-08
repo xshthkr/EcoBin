@@ -4,8 +4,6 @@
 # It captures an image using the webcam, classifies the image using the KNN algorithm, and actuates the servo motors based on the classification result.
 # The script is designed to run on the Raspberry Pi.
 
-import os
-import time
 import threading
 
 from image_capture import ImageCapture

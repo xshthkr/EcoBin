@@ -25,16 +25,27 @@ class ServoController:
         self.p.ChangeDutyCycle(duty_cycle)
         sleep(1)
 
+def func1():
+    servo1.move_servo(0)
+    servo2.move_servo(180)
+
+def func2():
+    servo1.move_servo(180)
+    servo2.move_servo(0)
+
+t1 = threading.Thread(target=func1)
+t2 = threading.Thread(target=func2)
+
 # Example usage
 if __name__ == "__main__":
     servo1 = ServoController(11)
     servo2 = ServoController(37)
     try:
         while True:
-            servo1.move_servo(0)
-            servo1.move_servo(180)
-            servo2.move_servo(0)
-            servo2.move_servo(180)
+            t1.start()
+            t2.start()
+            t1.join()
+            t2.join()
     except KeyboardInterrupt:
         del servo1
         del servo2

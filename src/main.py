@@ -18,15 +18,40 @@ result = model.classify_image(path_to_image)
 
 servo1 = ServoController(11)
 
+def func1():
+    servo1.move_servo(0)
+    servo2.move_servo(180)
+
+def func2():
+    servo1.move_servo(180)
+    servo2.move_servo(0)
+
+def func3():
+    servo1.move_servo(180)
+    servo2.move_servo(0)
+
+def func4():
+    servo1.move_servo(0)
+    servo2.move_servo(180)
+
 if result == "O":
     print(f"[ECOBIN] >> Predicted Label: {result}")
-    servo1.move_servo(0)
-    servo1.move_servo(180)
+
 
 elif result == "R":
     print(f"[ECOBIN] >> Predicted Label: {result}")
-    servo1.move_servo(180)
-    servo1.move_servo(0)
+    t1 = threading.Thread(target=func1)
+    t2 = threading.Thread(target=func2)
+    t1.start()
+    t2.start()
+    t1.join()
+    t2.join()
 
 else:
     print("[ECOBIN] >> Couldnt classify image.")    
+    t1 = threading.Thread(target=func3)
+    t2 = threading.Thread(target=func4)
+    t1.start()
+    t2.start()
+    t1.join()
+    t2.join()

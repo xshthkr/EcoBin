@@ -61,3 +61,7 @@ class ImageClassifier:
             
 if __name__ == "__main__":
     
+    train_folder = "/home/rpi/Downloads/DATASET_2/TRAIN"
+    model = ImageClassifier(train_folder)
+    model.load_training_data()
+    result = model.classify_image(path_to_image)

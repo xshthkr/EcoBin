@@ -30,6 +30,7 @@ class ImageCapture:
             path = "/home/rpi/Downloads/DATASET_2/TEST/test.jpg"
             cv2.imwrite(path, frame)
             print("[WEBCAM] >> Image captured successfully")
+            print("[WEBCAM] >> Path:", path)
 
             plt.imshow(plt.imread(path))
             plt.title("Captured Image")

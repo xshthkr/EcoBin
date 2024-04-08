@@ -15,6 +15,7 @@ from servo_controller_threaded import ServoController
 
 image_capture = ImageCapture()
 path_to_image = image_capture.capture_image()
+image_capture.release()
 
 print(f"[ECOBIN] >> Path: {path_to_image}")
 

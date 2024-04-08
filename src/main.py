@@ -20,16 +20,12 @@ servo1 = ServoController(11)
 if result == "O":
     print(f"[ECOBIN] >> Predicted Label: {result}")
     servo1.move_servo(0)
-    time.sleep(5)
     servo1.move_servo(180)
-    servo1.stop()
 
 elif result == "R":
     print(f"[ECOBIN] >> Predicted Label: {result}")
     servo1.move_servo(180)
-    time.sleep(5)
-    servo1.move_servo(0) 
-    servo1.stop()
+    servo1.move_servo(0)
 
 else:
     print("[ECOBIN] >> Couldnt classify image.")    

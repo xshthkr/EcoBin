@@ -49,8 +49,6 @@ t2 = threading.Thread(target=servo2_spin)
 
 # Example usage
 if __name__ == "__main__":
-    servo1 = ServoController(11)
-    servo2 = ServoController(37)
 
     t1.start()
     t2.start()

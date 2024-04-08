@@ -17,8 +17,6 @@ image_capture = ImageCapture()
 path_to_image = image_capture.capture_image()
 image_capture.release()
 
-print(f"[ECOBIN] >> Path: {path_to_image}")
-
 train_folder = "/home/rpi/Downloads/DATASET_2/TRAIN"
 model = ImageClassifier(train_folder)
 model.load_training_data()
@@ -50,26 +48,35 @@ def servo2_spin_clockwise():
 
 
 if result == "O":
+
     print(f"[ECOBIN] >> Predicted Label: {result}")
+
     # PAIR 1
     t1 = threading.Thread(target=servo1_spin_clockwise)
     t2 = threading.Thread(target=servo2_spin_counterclockwise)
+
     t1.start()
     t2.start()
+
     t1.join()
     t2.join()
 
 elif result == "R":
+
     print(f"[ECOBIN] >> Predicted Label: {result}")
+    
     # PAIR 2
     t1 = threading.Thread(target=servo1_spin_counterclockwise)
     t2 = threading.Thread(target=servo2_spin_clockwise)
+    
     t1.start()
     t2.start()
+    
     t1.join()
     t2.join()
 
 else:
+    
     print("[ECOBIN] >> Couldnt classify image.")
 
 del servo1

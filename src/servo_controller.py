@@ -27,10 +27,14 @@ class ServoController:
 
 # Example usage
 if __name__ == "__main__":
-    servo = ServoController(11)
+    servo1 = ServoController(11)
+    servo2 = ServoController(37)
     try:
         while True:
-            servo.move_servo(0)
-            servo.move_servo(180)
+            servo1.move_servo(0)
+            servo1.move_servo(180)
+            servo2.move_servo(0)
+            servo2.move_servo(180)
     except KeyboardInterrupt:
-        del servo
+        del servo1
+        del servo2

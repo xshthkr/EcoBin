@@ -4,6 +4,7 @@ from classification_2 import ImageClassifier
 
 import os
 import time
+import threading
 
 image_capture = ImageCapture()
 path_to_image = image_capture.capture_image()

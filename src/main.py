@@ -10,7 +10,8 @@ path_to_image = image_capture.capture_image()
 
 print(f"[ECOBIN] >> Path: {path_to_image}")
 
-model = ImageClassifier()
+train_folder = "/home/rpi/Downloads/DATASET_2/TRAIN"
+model = ImageClassifier(train_folder)
 model.load_training_data()
 result = model.classify_image(path_to_image)
 

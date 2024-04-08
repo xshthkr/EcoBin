@@ -33,7 +33,6 @@ class ImageClassifier:
 
 
     def load_and_preprocess_image(self, image_path, target_shape=(100, 100)):
-        print("[ECOBIN] >> Processing image from webcam...")
         img = cv2.imread(image_path)
         if img is None:
             print(f"[ECOBIN] >> Error: Unable to load image from {image_path}")
@@ -64,5 +63,6 @@ if __name__ == "__main__":
     train_folder = "/home/rpi/Downloads/DATASET_2/TRAIN"
     model = ImageClassifier(train_folder)
     model.load_training_data()
+    path_to_image = "/home/rpi/Downloads/DATASET_2/TEST/test.jpg"
     result = model.classify_image(path_to_image)
     print("Predicted Label:", result)

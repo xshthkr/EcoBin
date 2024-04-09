@@ -47,10 +47,10 @@ class ServoController:
 
 # PAIR 1
 def servo1_spin_clockwise():
-    servo1.move_servo(30)
+    servo1.move_servo(45)
     servo1.move_servo(90)
 def servo2_spin_counterclockwise():
-    servo2.move_servo(30)
+    servo2.move_servo(45)
     servo2.move_servo(90)
 
 # PAIR 2

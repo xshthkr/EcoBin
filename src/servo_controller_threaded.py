@@ -42,33 +42,37 @@ class ServoController:
 
 # PAIR 1
 def servo1_spin_clockwise():
+    servo1 = ServoController(11, 1)
     servo1.move_servo(0)
     servo1.move_servo(90)
+    del servo1
 
 
 def servo2_spin_counterclockwise():
+    servo2 = ServoController(37, 2) 
     servo2.move_servo(90)
     servo2.move_servo(0)
+    del servo2
     
 
 # PAIR 2
 def servo1_spin_counterclockwise():
+    servo1 = ServoController(11, 1)
     servo1.move_servo(90)
     servo1.move_servo(0)
+    del servo1
     
 
 def servo2_spin_clockwise():
+    servo2 = ServoController(37, 2) 
     servo2.move_servo(0)
     servo2.move_servo(90)
+    del servo2
 
 
 
 # Example usage
 if __name__ == "__main__":
-
-    # ServoController(pin, servo_number)
-    servo1 = ServoController(11, 1)
-    servo2 = ServoController(37, 2) 
 
     # PAIR 1
     t1 = threading.Thread(target=servo1_spin_clockwise)
@@ -89,6 +93,3 @@ if __name__ == "__main__":
     t4.start()
     t3.join()
     t4.join()
-
-    del servo1
-    del servo2

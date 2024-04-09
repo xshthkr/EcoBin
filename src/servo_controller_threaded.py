@@ -55,8 +55,8 @@ def servo2_spin_counterclockwise():
 
 # PAIR 2
 def servo1_spin_counterclockwise():
-    servo1.move_servo(90)
     servo1.move_servo(0)
+    servo1.move_servo(90)
 def servo2_spin_clockwise():
     servo2.move_servo(0)
     servo2.move_servo(90)

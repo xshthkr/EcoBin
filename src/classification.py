@@ -35,7 +35,7 @@ class ImageClassifier:
                         labels_train.append(label)
         images_train = np.array(images_train)
         images_train_flattened = images_train.reshape(images_train.shape[0], -1)
-        self.knn_classifier = KNeighborsClassifier(n_neighbors=2)
+        self.knn_classifier = KNeighborsClassifier(n_neighbors=3)
         self.knn_classifier.fit(images_train_flattened, labels_train)
 
 

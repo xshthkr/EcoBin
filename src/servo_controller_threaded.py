@@ -75,8 +75,8 @@ def servo2_spin_clockwise():
 if __name__ == "__main__":
 
     # PAIR 1
-    t1 = threading.Thread(target=servo1_spin_clockwise)
-    t2 = threading.Thread(target=servo2_spin_counterclockwise)
+    t1 = threading.Thread(target=servo1_spin_counterclockwise)
+    t2 = threading.Thread(target=servo2_spin_clockwise)
 
     # # PAIR 2
     # t3 = threading.Thread(target=servo1_spin_counterclockwise)

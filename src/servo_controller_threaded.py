@@ -13,16 +13,17 @@ import RPi.GPIO as GPIO
 class ServoController:
 
 
-    def __init__(self, pin):
+    def __init__(self, pin, servo_number):
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(pin, GPIO.OUT)
         self.p = GPIO.PWM(pin, 50)
         self.p.start(0)
-        print("[ACTUATOR] >> Servo ready.")
+        self.number = servo_number
+        print(f"[ACTUATOR {self.number}] >> Servo ready.")
 
 
     def __del__(self):
-        print("[ACTUATOR] >> Stopping.")
+        print(f"[ACTUATOR {self.number}] >> Stopping.")
         self.p.stop()
         GPIO.cleanup()
 
@@ -33,15 +34,15 @@ class ServoController:
 
 
     def move_servo(self, angle):
-        print("[ACTUATOR] >> Moving to {angle} degrees")
+        print(f"[ACTUATOR {self.number}] >> Moving to {angle} degrees")
         duty_cycle = self.angle_to_duty_cycle(angle)
         self.p.ChangeDutyCycle(duty_cycle)
         sleep(1)
 
 
 # ServoController(pin, servo_number)
-# servo1 = ServoController(11)
-# servo2 = ServoController(37)
+# servo1 = ServoController(11, 1)
+# servo2 = ServoController(37, 2)
 
 
 # PAIR 1
@@ -67,12 +68,12 @@ def servo2_spin_clockwise():
 
 
 # PAIR 1
-t1 = threading.Thread(target=servo1_spin_clockwise)
-t2 = threading.Thread(target=servo2_spin_counterclockwise)
+# t1 = threading.Thread(target=servo1_spin_clockwise)
+# t2 = threading.Thread(target=servo2_spin_counterclockwise)
 
-# PAIR 2
-t3 = threading.Thread(target=servo1_spin_counterclockwise)
-t4 = threading.Thread(target=servo2_spin_clockwise)
+# # PAIR 2
+# t3 = threading.Thread(target=servo1_spin_counterclockwise)
+# t4 = threading.Thread(target=servo2_spin_clockwise)
 
 
 # Example usage

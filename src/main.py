@@ -21,8 +21,8 @@ model.load_training_data()
 result = model.classify_image(path_to_image)
 
 # ServoController(pin, servo_number)
-servo1 = ServoController(11)
-servo2 = ServoController(37)
+servo1 = ServoController(11, 1)
+servo2 = ServoController(37, 2)
 
 
 # PAIR 1

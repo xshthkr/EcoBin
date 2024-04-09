@@ -40,8 +40,8 @@ class ServoController:
 
 
 # ServoController(pin, servo_number)
-servo1 = ServoController(11)
-servo2 = ServoController(37)
+# servo1 = ServoController(11)
+# servo2 = ServoController(37)
 
 
 # PAIR 1

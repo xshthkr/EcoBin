@@ -79,17 +79,17 @@ if __name__ == "__main__":
     t2 = threading.Thread(target=servo2_spin_counterclockwise)
 
     # # PAIR 2
-    t3 = threading.Thread(target=servo1_spin_counterclockwise)
-    t4 = threading.Thread(target=servo2_spin_clockwise)
+    # t3 = threading.Thread(target=servo1_spin_counterclockwise)
+    # t4 = threading.Thread(target=servo2_spin_clockwise)
 
     t1.start()
     t2.start()
     t1.join()
     t2.join()
 
-    sleep(2)
+    # sleep(2)
 
-    t3.start()
-    t4.start()
-    t3.join()
-    t4.join()
+    # t3.start()
+    # t4.start()
+    # t3.join()
+    # t4.join()

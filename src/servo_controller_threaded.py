@@ -40,11 +40,6 @@ class ServoController:
         sleep(1)
 
 
-# ServoController(pin, servo_number)
-# servo1 = ServoController(11, 1)
-# servo2 = ServoController(37, 2)
-
-
 # PAIR 1
 def servo1_spin_clockwise():
     servo1.move_servo(0)
@@ -67,17 +62,21 @@ def servo2_spin_clockwise():
     servo2.move_servo(90)
 
 
-# PAIR 1
-# t1 = threading.Thread(target=servo1_spin_clockwise)
-# t2 = threading.Thread(target=servo2_spin_counterclockwise)
-
-# # PAIR 2
-# t3 = threading.Thread(target=servo1_spin_counterclockwise)
-# t4 = threading.Thread(target=servo2_spin_clockwise)
-
 
 # Example usage
 if __name__ == "__main__":
+
+    # ServoController(pin, servo_number)
+    servo1 = ServoController(11, 1)
+    servo2 = ServoController(37, 2) 
+
+    # PAIR 1
+    t1 = threading.Thread(target=servo1_spin_clockwise)
+    t2 = threading.Thread(target=servo2_spin_counterclockwise)
+
+    # # PAIR 2
+    t3 = threading.Thread(target=servo1_spin_counterclockwise)
+    t4 = threading.Thread(target=servo2_spin_clockwise)
 
     t1.start()
     t2.start()

@@ -30,3 +30,7 @@ This repository holds the ```.py``` files for the Raspberry Pi module of EcoBin.
 1. Clone this repository to your local machine.
 2. Install the necessary Python libraries with `pip install -r requirements.txt`.
 3. Run `python main.py` to start the program.
+
+
+## Demo Video
+[![See the Working]](https://drive.google.com/drive/folders/1v01BjMB7FujR2tBTY8JAaUFmC2UJ6NaL?usp=drive_link)

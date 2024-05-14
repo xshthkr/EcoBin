@@ -1,7 +1,7 @@
 # EcoBin: kNN-Waste-Segregation
 EcoBin is a waste segregation smart dustbin that classifies and separates recyclable and organic waste. This project has been submitted to the CS210 Artificial Intelligence semester final at NIT Surat, 2024.
 
-This repository holds the ```.py``` files for the Raspberry Pi module of EcoBin. This repository DOES NOT include the dataset used in the KNN model.
+This repository holds the ```.py``` files for the Raspberry Pi module of EcoBin. This repository DOES NOT include the dataset used in the KNN model. The dataset used to train this model is publicly available on Kaggle.
 
 
 ## Members of Team EcoBin
@@ -24,6 +24,7 @@ This repository holds the ```.py``` files for the Raspberry Pi module of EcoBin.
 - KNN model for waste classification
 - Raspberry Pi 3 B+
 - Servo motors
+- Logitech camera
 
 
 ## Installation and Setup
@@ -33,4 +34,4 @@ This repository holds the ```.py``` files for the Raspberry Pi module of EcoBin.
 
 
 ## Demo Video
-[![See the Working]](https://drive.google.com/drive/folders/1v01BjMB7FujR2tBTY8JAaUFmC2UJ6NaL?usp=drive_link)
+[See it in action!](https://drive.google.com/drive/folders/1v01BjMB7FujR2tBTY8JAaUFmC2UJ6NaL?usp=drive_link)

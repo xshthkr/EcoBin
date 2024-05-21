@@ -6,6 +6,7 @@ This repository holds the ```.py``` files for the Raspberry Pi module of EcoBin.
 
 ## Members of Team EcoBin
 - Shashank Thakur, U22CS060
+- Kevalya Shah, U22CS021
 - Misbah Shaikh, U22CS043
 - Raj Vadodaria, U22CS077
 
